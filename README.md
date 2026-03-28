@@ -67,10 +67,11 @@ make bin
 py make_exe.py neorv32_raw_exe.bin neorv32_exe_old.bin
 ```
 
-> **Why make_exe.py?**
-> Newer NEORV32 versions use a `NEO!` executable signature, but the modified bootloader
-> in this project expects the legacy `0x4788CAFE` signature. `make_exe.py` repackages
-> the raw binary with the correct header (signature + size + checksum).
+> **Why not `make exe`?**
+> `make exe` produces `neorv32_exe.bin` but newer NEORV32 versions use a `NEO!` executable
+> signature. The modified bootloader in this project expects the legacy `0x4788CAFE` signature.
+> `make bin` gives us the raw binary, and `make_exe.py` repackages it with the correct
+> header (signature + size + checksum).
 
 ---
 
